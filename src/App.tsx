@@ -1,17 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { HashRouter as Router } from "react-router-dom";
+import { MainContentRouter, Header } from "./components";
+import { pages } from "./pages";
 
-function App() {
+const App: React.FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          H&L Concrete Website coming soon...
-        </p>
-      </header>
-    </div>
+      <div className={`app`}>
+        <Router>
+          <Header/>
+          <MainContentRouter
+            pages={pages}
+          />
+        </Router>
+      </div>
   );
 }
 
